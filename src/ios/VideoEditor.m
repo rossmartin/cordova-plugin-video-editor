@@ -39,14 +39,16 @@
     
     switch(qualityType) {
         case HighQuality:
-            presetName = AVAssetExportPresetHighestQuality; // 360x480
+            //presetName = AVAssetExportPresetHighestQuality;
+            presetName = AVAssetExportPreset960x540;
             break;
         case MediumQuality:
         default:
-            presetName = AVAssetExportPresetMediumQuality; // 360x480
+            presetName = AVAssetExportPresetMediumQuality;
             break;
         case LowQuality:
-            presetName = AVAssetExportPresetLowQuality; // 144x192
+            presetName = AVAssetExportPresetLowQuality;
+            break;
     }
 
     CDVOutputFileType outputFileType = ([options objectForKey:@"outputFileType"]) ? [[options objectForKey:@"outputFileType"] intValue] : MPEG4;
