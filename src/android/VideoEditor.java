@@ -138,7 +138,7 @@ public class VideoEditor extends CordovaPlugin {
                 break;
             case HighQuality:
             default:
-                outputResolution = "640x640"; 
+                outputResolution = "960x540"; 
                 break;
         }
         
