@@ -265,7 +265,12 @@ public class VideoEditor extends CordovaPlugin {
         JSONObject options = args.optJSONObject(0);
         Log.d(TAG, "options: " + options.toString());
 
-        File inFile = this.resolveLocalFileSystemURI(options.getString("fileUri"));
+        String fileUri = options.getString("fileUri");
+        if (!fileUri.startsWith("file:/")) {
+            fileUri = "file:/" + fileUri;
+        }
+        
+        File inFile = this.resolveLocalFileSystemURI(fileUri);
         if (!inFile.exists()) {
             Log.d(TAG, "input file does not exist");
             callback.error("input video does not exist.");
