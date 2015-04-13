@@ -40,7 +40,8 @@
     switch(qualityType) {
         case HighQuality:
             //presetName = AVAssetExportPresetHighestQuality;
-            presetName = AVAssetExportPreset640x480;
+            //presetName = AVAssetExportPreset640x480;
+            presetName = AVAssetExportPresetMediumQuality;
             break;
         case MediumQuality:
         default:
